@@ -1,0 +1,3 @@
+[Project]
+Manager=KDevCMakeManager
+Name=med_uav_control

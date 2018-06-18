@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find med_aerial_challenge_launch)/launch/bebop_joy_override.launch" />
+	<include file="$(find med_aerial_challenge_launch)/launch/bebop_optitrack.launch" />
+	<include file="$(find med_aerial_challenge_launch)/launch/bebop_driver.launch" />
+</launch>
