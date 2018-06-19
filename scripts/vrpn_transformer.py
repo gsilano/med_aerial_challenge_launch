@@ -74,7 +74,7 @@ class VrpnTransform:
             odom_msg.twist.twist.linear.y = sum(ma_vel_y_list)/len(ma_vel_y_list)
             odom_msg.twist.twist.linear.z = sum(ma_vel_z_list)/len(ma_vel_z_list)
             odom_msg.header.stamp = rospy.Time.now()
-            self.odom_pub.publish(odom_msg)
+            #self.odom_pub.publish(odom_msg)
         
 
     def pose_cb(self, msg):
@@ -158,12 +158,12 @@ class VrpnTransform:
             # Set up odometry message
             odom_msg = Odometry()
             odom_msg.pose.pose = self.pose_msg.pose
-            odom_msg.twist.twist.linear = vel_msg.twist.linear
+            odom_msg.twist.twist = vel_msg.twist
             odom_msg.header.stamp = rospy.Time.now()
 
             self.pose_pub.publish(self.pose_msg)
             self.vel_pub.publish(vel_msg)
-            #self.odom_pub.publish(odom_msg)
+            self.odom_pub.publish(odom_msg)
    
 if __name__ == '__main__':
 
